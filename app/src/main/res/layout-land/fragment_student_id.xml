@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/studentLabel"
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_red_light"
+        android:text="@string/label_student"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toStartOf="@+id/image_logo_pwani_student_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_logo_pwani_student_id"
+        android:layout_width="204dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/logo_pwani"
+        android:layout_toEndOf="@+id/studentLabel"
+        android:layout_toRightOf="@+id/studentLabel"
+        android:contentDescription="@string/contentDescription_student_id_logo_pwani"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/studentLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/student_id_passport"
+        android:layout_width="152dp"
+        android:layout_height="152dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:contentDescription="@string/description_admission_passport"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/studentLabel"
+        android:layout_toRightOf="@+id/studentLabel"
+        app:srcCompat="@drawable/ic_my_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_logo_pwani_student_id" />
+
+    <TextView
+        android:id="@+id/student_id_full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        tools:text="JEREMIAH ODUOR POLO"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/student_id_passport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentLabel" />
+
+    <TextView
+        android:id="@+id/student_id_reg_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="7dp"
+        tools:text="SB30/PU/41790/16"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/student_id_passport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_id_course" />
+
+    <TextView
+        android:id="@+id/student_id_course"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="7dp"
+        tools:text="BACHALOR OF SCIENCE IN COMPUTER SCIENCE"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/student_id_passport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_id_full_name" />
+
+    <ImageView
+        android:id="@+id/student_id_barcode"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/description_admission_bar_code"
+        android:src="@drawable/images"
+        app:layout_constraintEnd_toStartOf="@+id/student_id_passport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_id_reg_number" />
+
+    <TextView
+        android:id="@+id/student_id_reg_number_short"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        tools:text="SB30PU4179016"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_id_barcode" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@id/student_id_passport"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_toEndOf="@id/studentLabel"
+        android:layout_toRightOf="@id/studentLabel"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_id_passport">
+
+        <TextView
+            android:id="@+id/student_id_date_of_issue_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/student_id_date_issued_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/student_id_date_of_issue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="10-Jun-2017" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

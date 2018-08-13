@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">PwaniUniversity</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_admission_number">Admission Number.</string>
+    <string name="student_portal_login">Student Portal Login</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="dashboard_admissions">Admissions</string>
+    <string name="dashboard_semester_registration">Semester\nRegistration</string>
+    <string name="dashboard_hostel_booking">Hostel\nBooking</string>
+    <string name="dashboard_fee_status">Fee Status</string>
+    <string name="dashboard_fee_description">Description</string>
+    <string name="dashboard_fee_amount">Amount</string>
+    <string name="dashboard_my_profile">My Profile</string>
+    <string name="dashboard_exam">Exam</string>
+    <string name="dashboard_timetable">TimeTable</string>
+    <string name="dashboard_unit_registration">Unit\nRegistration</string>
+    <string name="dashboard_student_finance">Student\nFinance</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="text_admission_dashboard">Dashboard</string>
+    <string name="text_admission_student_passport">Student Passport</string>
+    <string name="text_admission_high_school_certificate">High School Certificate</string>
+    <string name="text_admission_leaving_certificate">Leaving Certificate</string>
+    <string name="text_admission_national_id_birth_certificate">National ID/ Birth Certificate</string>
+    <string name="text_admission_signed_acceptance_letter">Signed Acceptance Letter</string>
+
+    <string name="title_activity_admission">Admission</string>
+    <string name="title_activity_hostel_booking">HostelBooking</string>
+    <string name="title_activity_finance">Finance</string>
+    <string name="title_activity_semester_registration">SemesterRegistration</string>
+    <string name="title_activity_unit_registration">UnitRegistration</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_exam">Exam</string>
+    <string name="title_activity_time_table">TimeTable</string>
+
+    <string name="nav_financial_statement">Financial Statement</string>
+    <string name="nav_bank_payments">Bank Payments</string>
+    <string name="nav_mpesa_payments">Mpesa Payments</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="hostel_bookings">Hostel Bookings</string>
+    <string name="nav_semester_registration">Semester Registration</string>
+    <string name="nav_unit_registration">Unit Registration</string>
+    <string name="nav_student_profile">Student Profile</string>
+    <string name="nav_student_id">Student ID</string>
+    <string name="nav_exam_results">Exam Results</string>
+    <string name="nav_exam_transcripts">Transcripts</string>
+    <string name="nav_semester_timetable">Semester TimeTable</string>
+    <string name="nav_exam_timetable">Exam TimeTable</string>
+    <string name="label_student">STUDENT</string>
+    <string name="contentDescription_student_id_logo_pwani">Student ID Logo Pwani</string>
+    <string name="student_id_date_issued_label">Date Issued:</string>
+    <string name="description_admission_bar_code">Admission Bar Code</string>
+    <string name="description_admission_passport">admission_passport</string>
+</resources>

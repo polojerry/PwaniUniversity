@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_admission_dashboard"
+        android:icon="@drawable/ic_nav_dashboard"
+        android:title="@string/nav_dashboard" />
+    <item
+        android:id="@+id/nav_admission_id_card"
+        android:icon="@drawable/ic_nav_account"
+        android:title="@string/nav_student_id" />
+    <item
+        android:id="@+id/nav_admission_student_passport"
+        android:icon="@drawable/ic_nav_account"
+        android:title="@string/text_admission_student_passport" />
+    <item
+        android:id="@+id/nav_admission_high_school_certificate"
+        android:icon="@drawable/ic_nav_award"
+        android:title="@string/text_admission_high_school_certificate" />
+    <item
+        android:id="@+id/nav_admission_leaving_certificate"
+        android:icon="@drawable/ic_nav_star_award"
+        android:title="@string/text_admission_leaving_certificate" />
+
+    <item
+        android:id="@+id/nav_admission_national_id_birth_certificate"
+        android:icon="@drawable/ic_nav_account"
+        android:title="@string/text_admission_national_id_birth_certificate" />
+    <item
+        android:id="@+id/nav_admission_signed_acceptance_letter"
+        android:icon="@drawable/ic_nav_star_award"
+        android:title="@string/text_admission_signed_acceptance_letter" />
+
+</menu>

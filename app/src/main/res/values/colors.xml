@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#303F9F</color>
+    <color name="colorPrimaryDark">#03A9F4</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBackground">#05B0C4</color>
+    <color name="colorWhite">@android:color/white</color>
+    <color name="colorAdmissionBackground">#00C0CF</color>
+    <color name="colorStudentFinanceBackground">#00A65A</color>
+    <color name="colorSemesterRegistrationBackground">#F56954</color>
+    <color name="colorHostelBookingBackground">#39CCCC</color>
+    <color name="colorUnitRegistrationBackground">#932AB6</color>
+    <color name="colorTimeTableBackground">#39CCCC</color>
+    <color name="colorExamBackground">#0073B7</color>
+    <color name="colorMyProfileBackground">#3D9970</color>
+    <color name="color_nav_background">#333333</color>
+
+    <color name="colorHolowRed">@android:color/holo_red_light</color>
+    <color name="colorLightGreen">@android:color/holo_green_dark</color>
+
+
+</resources>

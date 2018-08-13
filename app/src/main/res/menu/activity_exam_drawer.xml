@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_exam_dashboard"
+        android:icon="@drawable/ic_nav_dashboard"
+        android:title="@string/nav_dashboard" />
+    <item
+        android:id="@+id/nav_exam_result"
+        android:icon="@drawable/ic_nav_star_award"
+        android:title="@string/nav_exam_results" />
+    <item
+        android:id="@+id/nav_exam_transcript"
+        android:icon="@drawable/ic_nav_award"
+        android:title="@string/nav_exam_transcripts" />
+
+</menu>

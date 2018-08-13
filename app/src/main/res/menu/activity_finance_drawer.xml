@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_finance_dashboard"
+        android:icon="@drawable/ic_nav_dashboard"
+        android:title="@string/nav_dashboard" />
+    <item
+        android:id="@+id/nav_finance_financial_statement"
+        android:icon="@drawable/ic_nav_finance"
+        android:title="@string/nav_financial_statement" />
+    <item
+        android:id="@+id/nav_finance_bank_payments"
+        android:icon="@drawable/ic_nav_cash"
+        android:title="@string/nav_bank_payments" />
+    <item
+        android:id="@+id/nav_finance_mpesa_payment"
+        android:icon="@drawable/ic_nav_star_award"
+        android:title="@string/nav_mpesa_payments" />
+</menu>
