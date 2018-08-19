@@ -38,7 +38,6 @@
         android:contentDescription="@string/description_admission_passport"
         android:layout_height="200dp"
         android:layout_marginTop="1dp"
-        app:srcCompat="@drawable/ic_my_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_logo_pwani_student_id" />
@@ -88,7 +87,6 @@
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/images"
         android:contentDescription="@string/description_admission_bar_code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

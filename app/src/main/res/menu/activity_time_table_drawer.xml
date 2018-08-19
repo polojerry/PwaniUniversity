@@ -3,10 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item
-        android:id="@+id/nav_time_table_dashboard"
-        android:icon="@drawable/ic_nav_dashboard"
-        android:title="@string/nav_dashboard" />
 
     <item
         android:id="@+id/nav_time_table_studies"

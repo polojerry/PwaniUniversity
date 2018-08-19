@@ -13,7 +13,11 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -43,5 +47,7 @@ dependencies {
 
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
-    implementation 'com.github.StevenDXC:DxLoadingButton:2.1'
+
+    implementation 'com.github.barteksc:android-pdf-viewer:2.3.0'
+    implementation 'org.apache.commons:commons-io:1.3.2'
 }

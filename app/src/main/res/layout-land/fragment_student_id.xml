@@ -45,7 +45,6 @@
         android:layout_marginTop="4dp"
         android:layout_toEndOf="@+id/studentLabel"
         android:layout_toRightOf="@+id/studentLabel"
-        app:srcCompat="@drawable/ic_my_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_logo_pwani_student_id" />
 
@@ -100,7 +99,6 @@
         android:layout_marginRight="37dp"
         android:layout_marginStart="16dp"
         android:contentDescription="@string/description_admission_bar_code"
-        android:src="@drawable/images"
         app:layout_constraintEnd_toStartOf="@+id/student_id_passport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/student_id_reg_number" />

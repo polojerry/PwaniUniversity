@@ -7,6 +7,7 @@
     tools:context=".LoginActivity">
 
     <ImageView
+        android:contentDescription="@string/content_description_logo_pwani"
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,6 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
+        android:inputType="text"
         android:id="@+id/text_login_admission"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -65,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="#05b0c4"
+        android:background="@color/colorBackground"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="@color/colorWhite"

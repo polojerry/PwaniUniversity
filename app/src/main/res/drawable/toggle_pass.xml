@@ -1,0 +1,11 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_visibility_black_24dp" android:state_checked="true" android:state_pressed="true" />
+
+    //currently pressed turning the toggle on
+    <item android:drawable="@drawable/ic_visibility_black_24dp" android:state_pressed="true" />
+    //currently pressed turning the toggle off
+    <item android:drawable="@drawable/ic_visibility_black_24dp" android:state_checked="true" />
+    //not pressed default checked state
+    <item android:drawable="@drawable/ic_visibility_off_black_24dp" />
+    //default non-pressed non-checked
+</selector>

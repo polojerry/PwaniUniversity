@@ -39,6 +39,7 @@
     <string name="title_activity_profile">Profile</string>
     <string name="title_activity_exam">Exam</string>
     <string name="title_activity_time_table">TimeTable</string>
+    <string name="title_activity_reset_password">Reset Password</string>
 
     <string name="nav_financial_statement">Financial Statement</string>
     <string name="nav_bank_payments">Bank Payments</string>
@@ -58,4 +59,12 @@
     <string name="student_id_date_issued_label">Date Issued:</string>
     <string name="description_admission_bar_code">Admission Bar Code</string>
     <string name="description_admission_passport">admission_passport</string>
+    <string name="hint_new_password">New Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="content_description_logo_pwani">Pwani Logo</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="contentDescription_background_admission_image">Background Admission Image</string>
+    <string name="contentDescription_background_semester_registration_image">Background Semester Registration Image</string>
+
+
 </resources>

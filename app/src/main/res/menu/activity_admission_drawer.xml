@@ -4,16 +4,12 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/nav_admission_dashboard"
-        android:icon="@drawable/ic_nav_dashboard"
-        android:title="@string/nav_dashboard" />
-    <item
         android:id="@+id/nav_admission_id_card"
         android:icon="@drawable/ic_nav_account"
         android:title="@string/nav_student_id" />
     <item
         android:id="@+id/nav_admission_student_passport"
-        android:icon="@drawable/ic_nav_account"
+        android:icon="@drawable/ic_nav_user_profile"
         android:title="@string/text_admission_student_passport" />
     <item
         android:id="@+id/nav_admission_high_school_certificate"

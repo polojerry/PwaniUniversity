@@ -1,6 +1,7 @@
 package com.polotechnologies.polo.pwaniuniversity;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.NavigationView;
@@ -11,11 +12,22 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.polotechnologies.polo.pwaniuniversity.Fragments.StudentID;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AdmissionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static String admissionNumber;
+    public static String passportUrl;
+
+    public static FragmentTransaction fragmentTransaction;
+    public static Fragment startFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +36,41 @@ public class AdmissionActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.admission_toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_admission_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        startFragment = new StudentID();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.admissionContentMain, startFragment);
+        fragmentTransaction.commit();
+
+        //Fetching admissionNumber from shared preferences
+        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        admissionNumber = sharedPreferences.getString(Config.ADMISSION_SHARED_PREF, "Not Available");
+        passportUrl = sharedPreferences.getString(Config.IMAGE_URL_SHARED_PREF, "Not Available");
+
+        //Declaring the Navigation
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_admission_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Fetching the Header
+        View navigationHeader = navigationView.getHeaderView(0);
+
+        //Declaring the header views
+        CircleImageView passport =
+                (CircleImageView) navigationHeader.findViewById(R.id.image_nav_admission_profile_pic);
+        TextView admission =
+                (TextView) navigationHeader.findViewById(R.id.text_nav_admission_reg_number);
+
+        //Assigning the header views
+        Picasso.get()
+                .load(passportUrl)
+                .into(passport);
+
+        admission.setText(admissionNumber);
     }
 
     @Override
@@ -53,15 +91,12 @@ public class AdmissionActivity extends AppCompatActivity
 
         Fragment fragment = null;
 
-        switch (id){
-            case R.id.nav_admission_dashboard:
-                Intent startDashboard = new Intent(AdmissionActivity.this, MainActivity.class);
-                startActivity(startDashboard);
-                finish();
-                break;
+        switch (id) {
 
             case R.id.nav_admission_id_card:
-                fragment= new StudentID();
+                if (!startFragment.isVisible()) {
+                    fragment = new StudentID();
+                }
                 break;
             case R.id.nav_admission_student_passport:
 
@@ -84,9 +119,8 @@ public class AdmissionActivity extends AppCompatActivity
                 break;
         }
 
-        if(fragment != null){
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.admissionContentMain,fragment);
+        if (fragment != null) {
+            fragmentTransaction.replace(R.id.admissionContentMain, fragment);
             fragmentTransaction.commit();
         }
 

@@ -10,21 +10,19 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayout;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.polotechnologies.polo.pwaniuniversity.background.DownloadingTask;
+import com.polotechnologies.polo.pwaniuniversity.background.DownloadingTaskIntentService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,8 +31,13 @@ public class MainActivity extends AppCompatActivity {
     GridLayout mGridLayout;
     CardView mCardView;
     TextView mTextView;
+
+
     String mFeeBalance;
     String admissionNumber;
+
+    Context mContext = this;
+
 
 
     @Override
@@ -42,15 +45,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getFeeBalance();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getFeeBalance();
+            }
+        }).start();
 
-        mGridLayout = (GridLayout) findViewById(R.id.mainGridView);
-        mCardView = (CardView) findViewById(R.id.feeStatusColor);
-        mTextView = (TextView) findViewById(R.id.feeBalance);
+        mGridLayout = findViewById(R.id.mainGridView);
+        mCardView = findViewById(R.id.feeStatusColor);
+        mTextView = findViewById(R.id.feeBalance);
 
         //Fetching admissionNumber from shared preferences
         SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         admissionNumber = sharedPreferences.getString(Config.ADMISSION_SHARED_PREF,"Not Available");
+
+        Intent startDownloadingService = new Intent(mContext, DownloadingTaskIntentService.class);
+        startDownloadingService.setAction(DownloadingTask.ACTION_DOWNLOAD_ID_DETAILS);
+        startService(startDownloadingService);
 
         gridClickEvent(mGridLayout);
 
@@ -66,14 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
                             mFeeBalance = jsonObject.getString("fee_balance");
 
-                            mTextView.setText(mFeeBalance);
-
-                            Double balance = Double.valueOf(mFeeBalance);
-                            if (balance>0){
-                                mCardView.setCardBackgroundColor(Color.parseColor("#ffff4444"));
-                            }else{
-                                mCardView.setCardBackgroundColor(Color.parseColor("#ff669900"));
-                            }
+                            setFeeBalance(mFeeBalance);
 
                         }catch (JSONException e){
                             e.printStackTrace();
@@ -88,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }){
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String,String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put(Config.KEY_ADM, admissionNumber);
@@ -101,8 +106,6 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
-
     private void gridClickEvent(GridLayout mGridLayout) {
         for (int i = 0; i<mGridLayout.getChildCount(); i++){
             CardView mCardView = (CardView)mGridLayout.getChildAt(i);
@@ -147,6 +150,18 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+        }
+    }
+
+    public void setFeeBalance(String feeBalance) {
+
+        mTextView.setText(feeBalance);
+
+        Double balance = Double.valueOf(feeBalance);
+        if (balance > 0) {
+            mCardView.setCardBackgroundColor(Color.parseColor("#ffff4444"));
+        } else {
+            mCardView.setCardBackgroundColor(Color.parseColor("#ff669900"));
         }
     }
 }

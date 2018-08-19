@@ -55,6 +55,7 @@
                         android:textAlignment="center"/>
 
                     <ImageView
+                        android:contentDescription="@string/contentDescription_background_admission_image"
                         android:layout_weight="1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
@@ -95,6 +96,7 @@
                         android:textColor="@color/colorWhite" />
 
                     <ImageView
+                        android:contentDescription="@string/contentDescription_background_admission_image"
                         android:layout_weight="1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
@@ -132,6 +134,7 @@
                         android:textColor="@color/colorWhite" />
 
                     <ImageView
+                        android:contentDescription="@string/contentDescription_background_semester_registration_image"
                         android:layout_weight="1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"

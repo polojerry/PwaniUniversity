@@ -10,6 +10,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description_logo_pwani"
         android:layout_marginTop="8dp"
         android:src="@drawable/logo_pwani"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,38 +37,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <EditText
+    <android.support.design.widget.TextInputLayout
         android:id="@+id/text_login_admission"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:inputType="text"
         android:width="300dp"
-        android:hint="@string/hint_admission_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_students_login" />
+        app:layout_constraintTop_toBottomOf="@+id/label_students_login">
 
-    <EditText
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/loginAdmission"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/hint_admission_number"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:id="@+id/text_login_password"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:width="300dp"
-        android:hint="@string/hint_password"
-        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@+id/text_login_admission"
+        app:passwordToggleDrawable="@drawable/toggle_pass"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_login_admission" />
+        app:passwordToggleTint="@android:color/darker_gray">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="#05b0c4"
-        android:text="Login"
+        android:background="@color/colorBackground"
+        android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="@color/colorWhite"
         android:textStyle="italic"

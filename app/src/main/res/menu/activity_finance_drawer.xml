@@ -4,10 +4,6 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/nav_finance_dashboard"
-        android:icon="@drawable/ic_nav_dashboard"
-        android:title="@string/nav_dashboard" />
-    <item
         android:id="@+id/nav_finance_financial_statement"
         android:icon="@drawable/ic_nav_finance"
         android:title="@string/nav_financial_statement" />

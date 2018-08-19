@@ -1,9 +1,8 @@
 package com.polotechnologies.polo.pwaniuniversity;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,11 +10,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SemesterRegistrationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static String admissionNumber;
+    public static String passportUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +37,30 @@ public class SemesterRegistrationActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        //Fetching admissionNumber from shared preferences
+        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        admissionNumber = sharedPreferences.getString(Config.ADMISSION_SHARED_PREF, "Not Available");
+        passportUrl = sharedPreferences.getString(Config.IMAGE_URL_SHARED_PREF, "Not Available");
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.semester_registration_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Fetching the Header
+        View navigationHeader = navigationView.getHeaderView(0);
+
+        //Declaring the header views
+        CircleImageView passport =
+                (CircleImageView) navigationHeader.findViewById(R.id.image_nav_semester_registration_profile_pic);
+        TextView admission =
+                (TextView) navigationHeader.findViewById(R.id.text_nav_semester_registration_reg_number);
+
+        //Assigning the header views
+        Picasso.get()
+                .load(passportUrl)
+                .into(passport);
+
+        admission.setText(admissionNumber);
+
     }
 
     @Override
@@ -52,11 +80,6 @@ public class SemesterRegistrationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id){
-            case R.id.nav_semester_registration_dashboard:
-                Intent startDashboard = new Intent(SemesterRegistrationActivity.this, MainActivity.class);
-                startActivity(startDashboard);
-                finish();
-            break;
             case R.id.nav_semester_registration_sem_registration:
 
             break;
